@@ -9,7 +9,15 @@ defmodule Bottles do
   end
 
   def verses(number1, number2) do
-    "#{verse(number1)}\n#{verse(number2)}"
+    (number1..number2 |> Enum.to_list() |> verses |> String.trim()) <> "\n"
+  end
+
+  defp verses([]) do
+    ""
+  end
+
+  defp verses([number1 | other_numbers] = _) do
+    verse(number1) <> "\n" <> verses(other_numbers)
   end
 
   defp action(0) do

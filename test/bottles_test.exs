@@ -59,7 +59,6 @@ defmodule BottlesTest do
     assert expected == Bottles.verses(99, 98)
   end
 
-  @tag :skip
   test "a few verses" do
     expected = """
     2 bottles of beer on the wall, 2 bottles of beer.
