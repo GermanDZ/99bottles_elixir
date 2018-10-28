@@ -1,9 +1,19 @@
 defmodule Bottles do
   def verse(number) do
     """
-    #{number_of_bottles(number)} of beer on the wall, #{number_of_bottles(number)} of beer.
-    Take #{element_name(number)} down and pass it around, #{number_of_bottles(number - 1)} of beer on the wall.
+    #{String.capitalize(number_of_bottles(number))} of beer on the wall, #{
+      number_of_bottles(number)
+    } of beer.
+    #{action(number)}, #{number_of_bottles(number - 1)} of beer on the wall.
     """
+  end
+
+  defp action(0) do
+    "Go to the store and buy some more"
+  end
+
+  defp action(number) do
+    "Take #{element_name(number)} down and pass it around"
   end
 
   defp number_of_bottles(0) do
@@ -12,6 +22,10 @@ defmodule Bottles do
 
   defp number_of_bottles(1) do
     "1 bottle"
+  end
+
+  defp number_of_bottles(-1) do
+    number_of_bottles(99)
   end
 
   defp number_of_bottles(number) do
