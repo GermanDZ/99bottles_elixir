@@ -8,6 +8,10 @@ defmodule Bottles do
     """
   end
 
+  def verses(number1, number2) do
+    "#{verse(number1)}\n#{verse(number2)}"
+  end
+
   defp action(0) do
     "Go to the store and buy some more"
   end
