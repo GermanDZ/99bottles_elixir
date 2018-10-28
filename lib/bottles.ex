@@ -12,6 +12,10 @@ defmodule Bottles do
     (number1..number2 |> Enum.to_list() |> verses |> String.trim()) <> "\n"
   end
 
+  def song() do
+    verses(99, 0)
+  end
+
   defp verses([]) do
     ""
   end
